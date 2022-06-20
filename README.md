@@ -17,3 +17,4 @@ all those materials in presenting of this repository, either own creation or dow
 [IFS_LoRa_328PB_testing.ino_atmega328pb_1000000L.hex](IFS_LoRa_328PB_testing.ino_atmega328pb_1000000L.hex)  
 
 ### burn hex batch file
+[burn.bat](burn.bat)  
