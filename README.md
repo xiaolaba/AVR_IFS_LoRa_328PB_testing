@@ -6,9 +6,10 @@ invisiblefun.com Mini LoRa Development Board, generic app
 all those materials in presenting of this repository, either own creation or downloaded from the internet, no affiliation to the manufacturer or their designer.
 
 
-### hardward  
-LED @ PD5, MCU pin9
-reed switch @ PB0, MCU pin12 
+### hardware  
+LED @ PD5, MCU pin9  
+reed switch @ PB0, MCU pin12  
+IO, PC3 / PC1 PC0 or ADC3 / ADC1 / ADC0  
 ![InvisibleFun_Mini_LoRa_Development_Board_wiring3.JPG](InvisibleFun_Mini_LoRa_Development_Board_wiring3.JPG)  
 
 ### software source code  
