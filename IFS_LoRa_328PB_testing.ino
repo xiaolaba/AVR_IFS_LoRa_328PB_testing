@@ -123,9 +123,9 @@ void loop() {
     Serial.println("PC1/ADC1 = " + String(sensorValue1) );
     Serial.println("PC3/ADC3 = " + String(sensorValue3) );
 */
-    reedSwitchState = digitalRead(reedSwitchPin);
-    if (reedSwitchState == LOW) Serial.println("reedSwitch = LOW" );
-    else Serial.println("reedSwitch = HIGH" );
+
+    Serial.print("reedSwitch = " + String(digitalRead(reedSwitchPin)) + ", ");
+    Serial.println("VCC = " + String(detectVcc()) + " mV"); delay(1000); 
     
 //    Serial.println("VCC = " + String(detectVcc()) + " mV"); delay(1000); 
   }
