@@ -20,7 +20,7 @@ set sig=0x1e,0x95,0x16
 avrdude -c usbtiny -p %MCU% -U flash:w:%TARGET%.hex:a 
 ::avrdude -c usbtiny -p %MCU% -U lfuse:w:%lfuse%:m 
 ::avrdude -c usbtiny -p %MCU% -U hfuse:w:%hfuse%:m 
-::avrdude -c usbtiny -p %MCU% -U hfuse:w:%efuse%:m
+::avrdude -c usbtiny -p %MCU% -U efuse:w:%efuse%:m
 ::pause
 ::avrdude -c usbtiny -p %MCU% -U hfuse:r:fuse.txt:h 
 pause
