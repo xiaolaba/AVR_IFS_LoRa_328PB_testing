@@ -34,10 +34,12 @@ PCINT8 (Pin Change Interrupt 8)
 
 
 // constants won't change. Used here to set a pin number:
-const int ledPin =  PD5;// the number of the LED pin
-//const int pc0Pin =  PC0;// the number of the LED pin
-//const int pc1Pin =  PC1;// the number of the LED pin
-//const int pc3Pin =  PC3;// the number of the LED pin
+const int ledPin =  PIN_PD5;// the number of the LED pin
+const int pc0Pin =  PIN_PC0;// the number of the LED pin
+const int pc1Pin =  PIN_PC1;// the number of the LED pin
+const int pc3Pin =  PIN_PC3;// the number of the LED pin
+
+const int reedSwitchPin =  PIN_PB0;// the number of the reedSwitch pin
 
 
 int sensorPin0 = A0;    // select the input pin for the potentiometer
@@ -47,6 +49,7 @@ int sensorPin3 = A3;    // select the input pin for the potentiometer
 
 // Variables will change:
 int ledState = LOW;             // ledState used to set the LED
+int reedSwitchState = LOW;      // ledState used to set the LED
 
 // Generally, you should use "unsigned long" for variables that hold time
 // The value will quickly become too large for an int to store
@@ -64,10 +67,10 @@ int sensorValue3 = 0;  // variable to store the value coming from the sensor
 void setup() {
   // set the digital pin as output:
   pinMode(ledPin, OUTPUT);
-  //pinMode(pc0Pin, OUTPUT);
-  //pinMode(pc1Pin, OUTPUT);
-  //pinMode(pc3Pin, OUTPUT);
-
+  pinMode(pc0Pin, OUTPUT);
+  pinMode(pc1Pin, OUTPUT);
+  pinMode(pc3Pin, OUTPUT);
+  pinMode(reedSwitchPin, INPUT_PULLUP);
 
   //Initialize serial and wait for port to open:
   Serial.begin(9600);
@@ -79,11 +82,13 @@ void setup() {
 
 void loop() {
 
+/*
   sensorValue0 = analogRead(sensorPin0);
   delay(100);
   sensorValue1 = analogRead(sensorPin1);
   delay(100);
   sensorValue3 = analogRead(sensorPin3);
+*/
   
   // here is where you'd put code that needs to be running all the time.
 
@@ -105,16 +110,23 @@ void loop() {
 
     // set the LED with the ledState of the variable:
     digitalWrite(ledPin, ledState);
-//    digitalWrite(pc0Pin, ledState);
-//    digitalWrite(pc1Pin, ledState);
-//    digitalWrite(pc3Pin, ledState);
+
+    // test pc0/pc1/pc3 IO control
+    digitalWrite(pc0Pin, ledState);
+    digitalWrite(pc1Pin, ledState);
+    digitalWrite(pc3Pin, ledState);
             
     // prints title with ending line break
     Serial.println("xiaolaba IFS LoRa mini development broad testing");
+/*
     Serial.println("PC0/ADC0 = " + String(sensorValue0) );
     Serial.println("PC1/ADC1 = " + String(sensorValue1) );
     Serial.println("PC3/ADC3 = " + String(sensorValue3) );
-
+*/
+    reedSwitchState = digitalRead(reedSwitchPin);
+    if (reedSwitchState == LOW) Serial.println("reedSwitch = LOW" );
+    else Serial.println("reedSwitch = HIGH" );
+    
 //    Serial.println("VCC = " + String(detectVcc()) + " mV"); delay(1000); 
   }
 }
