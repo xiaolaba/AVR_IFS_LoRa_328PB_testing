@@ -9,7 +9,7 @@ all those materials in presenting of this repository, either own creation or dow
 ### hardward  
 LED @ PD5, MCU pin9
 reed switch @ PB0, MCU pin12 
-![InvisibleFun_Mini_LoRa_Development_Board_wiring.JPG](InvisibleFun_Mini_LoRa_Development_Board_wiring.JPG)  
+![InvisibleFun_Mini_LoRa_Development_Board_wiring3.JPG](InvisibleFun_Mini_LoRa_Development_Board_wiring3.JPG)  
 
 ### software source code  
 [IFS_LoRa_328PB_testing.ino](IFS_LoRa_328PB_testing.ino)  
